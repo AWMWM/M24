@@ -58,9 +58,15 @@ gulp.task('copys', function(done) {
 //创建监听任务
 gulp.task("watch", done => {
 
-    gulp.watch("*", gulp.series("copys"));
+    gulp.watch("*.html", gulp.series("copys"));
     gulp.watch("sass/*.scss", gulp.series("sass"));
     // gulp.watch("*img/**", gulp.series("copys"));
+    gulp.watch("img/**", gulp.series("copys"));
+    gulp.watch("html/**", gulp.series("copys"));
+    gulp.watch("js/**", gulp.series("copys"));
+    gulp.watch("jq/**", gulp.series("copys"));
+    gulp.watch("fonts/**", gulp.series("copys"));
+
 
     done();
 })
