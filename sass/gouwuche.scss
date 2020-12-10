@@ -186,7 +186,7 @@
  .zuixins {
      width: 100%;
      height: 100%;
-     line-height: 100px;
+     //  line-height: 100px;
  }
  
  .info {
@@ -232,8 +232,54 @@
      float: left;
      display: block;
      //  width: 30px;
-     background: red;
-     margin-top: 10px;
+     //  background: red;
+     margin-left: 80px;
+     //  margin-top: 10px;
+     margin-top: 50px;
+ }
+ 
+ .zuixins span:last-child {
+     float: right;
+     margin-right: 10px;
+ }
+ 
+ .zuixins span:nth-of-type(2) {
+     display: block;
+     margin-left: 60PX;
+     margin-top: 30px;
+     width: 80px;
+     height: 80px;
+ }
+ 
+ .zuixins span:nth-of-type(3) {
+     margin-left: 100px;
+ }
+ 
+ .zuixins span:nth-of-type(4) {
+     margin-left: 110px;
+ }
+ 
+ .zuixins span a {
+     display: block;
+     width: 170px;
+     overflow: hidden;
+ }
+ 
+ .zuixins span:last-child a {
+     float: left;
+     display: block;
+     width: 60px;
+     height: 30px;
+     background: rosybrown;
+     color: white;
+     //  margin-top: 40px;
+     line-height: 30px;
+     margin-top: -6px;
+ }
+ 
+ .zuixins span input {
+     width: 40px;
+     text-align: center;
  }
  
  .footer {
@@ -450,4 +496,55 @@
      width: 50px;
      height: 50px;
      background: red;
+ }
+ 
+ .mainss {
+     width: 1000px;
+     position: relative;
+     height: 85px;
+     background-color: #f1ebe4;
+     border: 1px solid gray;
+     //  border-top: 3px solid gray;
+     //  position: fixed;
+     margin: o auto;
+     margin-left: 23.75%;
+     bottom: 0%;
+ }
+ 
+ .mainss span {
+     float: left;
+     display: block;
+     line-height: 85px;
+     width: 90px;
+     //  background: lightblue;
+     margin-left: 5px;
+     font-size: 17px;
+     color: #C91623;
+     font-weight: 800;
+ }
+ 
+ .mainss span:nth-of-type(2) {
+     font-size: 23px;
+     font-weight: 800;
+     //  color: red;
+ }
+ 
+ .mainss button {
+     width: 200px;
+     height: 50px;
+     float: right;
+     margin-top: 20px;
+     font-size: 18px;
+     //  background: rgb(245, 212, 212);
+     //  border: 1px solid red;
+     outline-style: none;
+ }
+ 
+ .warp>i {
+     display: block;
+     float: left;
+     font-size: 30px;
+     color: #C91623;
+     margin-left: 5px;
+     margin-top: 18px;
  }

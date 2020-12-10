@@ -243,14 +243,14 @@
         display: none;
         position: fixed;
         top: 300px;
-        left: 320px;
-        width: 32px;
+        left: 300px;
+        width: 50px;
         border: 1px solid #CECECE;
     }
     
     #floorNav li {
         position: relative;
-        width: 32px;
+        width: 50px;
         height: 26px;
         border-bottom: 1px solid #CECECE;
         text-align: center;
@@ -263,7 +263,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 32px;
+        width: 50px;
         height: 32px;
         color: white;
     }
@@ -349,6 +349,9 @@
         width: 400px;
         height: 300px;
         border: 1px solid black;
+        position: relative;
+        z-index: 50;
+        background: lemonchiffon;
     }
     
     .sosuolan {
@@ -396,20 +399,20 @@
     }
     
     .bar1 {
-        background: #A3D0C3;
+        background: #0bec29;
     }
     
     .bar1 input {
-        border: 2px solid #7BA7AB;
+        border: 2px solid#0bec29;
         border-radius: 5px;
-        background: #F9F0DA;
+        // background: #F9F0DA;
         color: #9E9C9C;
     }
     
     .bar1 button {
         top: 0;
         right: 0;
-        background: #7BA7AB;
+        background: #0bec29;
         border-radius: 0 5px 5px 0;
     }
     
@@ -441,7 +444,7 @@
         // content: "\f002";
         font-family: FontAwesome;
         font-size: 16px;
-        color: #F9F0DA;
+        color: #0bec29;
     }
     
     //所有产品分类
@@ -492,7 +495,7 @@
     
     .last {
         float: right;
-        background: lightblue;
+        // background: lightblue;
         width: 150px;
     }
     
@@ -670,7 +673,7 @@
     
     .header-bottom {
         float: left;
-        width: 750px;
+        width: 760px;
         height: 128px;
         // background: lightsalmon;
         // box-sizing: border-box;
@@ -678,7 +681,7 @@
     
     .header-bottom li {
         float: left;
-        width: 244px;
+        width: 250px;
         height: 128px;
         // border: 1px solid black;
         box-sizing: border-box;
@@ -920,7 +923,7 @@
         width: 238px;
         height: 135px;
         box-sizing: border-box;
-        background-color: lemonchiffon;
+        background-color: white;
         border-right: 1px solid rgb(223, 217, 217);
     }
     
@@ -936,7 +939,7 @@
     #footer {
         width: 100%;
         height: 393px;
-        background: lemonchiffon;
+        // background: lemonchiffon;
     }
     
     .footers {

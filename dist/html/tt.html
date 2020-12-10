@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>模拟注册</title>
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-famliy: "微软雅黑";
+            font-style: normal;
+        }
+        
+        body {
+            background: #FBFBFB;
+        }
+        
+        .container {
+            border: solid 1px #F1F1F1;
+            width: 600px;
+            height: 600px;
+            background: #fff;
+            margin: 20px auto;
+            padding-bottom: 10px;
+        }
+        
+        .container h1 {
+            font-size: 22px;
+            font-family: 微软雅黑;
+            text-align: center;
+            color: #333;
+            display: block;
+            margin: 20px;
+            border: 0px solid gray;
+        }
+        
+        .div1 {
+            margin-left: 55px;
+        }
+        
+        #Name,
+        #Pwd1,
+        #Pwd2,
+        #telphone {
+            color: gray;
+            height: 25px;
+            width: 200px;
+            font-size: 10px;
+            padding-left: 10px;
+            margin-top: 10px;
+        }
+        
+        #btn1,
+        #btn2 {
+            height: 25px;
+            width: 60px;
+            display: block;
+            float: left;
+            margin-left: 70px;
+            margin-top: 20px;
+        }
+        
+        #sex1,
+        #sex2 {
+            margin-left: 10px;
+            margin-top: 20px;
+            line-height: 30px;
+            width: 13px;
+            border: 1px solid gray;
+        }
+        
+        #phone1 {
+            width: 45px;
+        }
+        
+        #phone2 {
+            width: 80px;
+        }
+        
+        #phone3 {
+            width: 45px;
+        }
+        
+        #phone1,
+        #phone2,
+        #phone3 {
+            color: gray;
+            height: 25px;
+            font-size: 10px;
+            padding-left: 5px;
+            margin-top: 10px;
+        }
+        
+        #hobby1,
+        #hobby2,
+        #hobby3,
+        #hobby4,
+        #hobby5,
+        #hobby6 {
+            color: gray;
+            height: 25px;
+            line-height: 30px;
+            font-size: 10px;
+            width: 13px;
+            vertical-align: middle;
+            margin-left: 5px;
+            margin-top: 10px;
+        }
+        
+        #lname,
+        #ltelphone,
+        #lphone,
+        #lpass1,
+        #lpass2 {
+            color: #FF0000;
+            font-size: 10px;
+        }
+    </style>
+
+    <script>
+        window.onload = function() {
+
+            var userName = document.getElementById("Name");
+
+            var lableName = document.getElementById("lname");
+
+            var password1 = document.getElementById("Pwd1");
+
+            var password2 = document.getElementById("Pwd2");
+
+            var labelPassword1 = document.getElementById("lpass1");
+
+            var labelPassword2 = document.getElementById("lpass2");
+
+            var telphone = document.getElementById("telphone");
+
+            var labelTelphone = document.getElementById("ltelphone");
+
+            var phone1 = document.getElementById("phone1");
+
+            var phone2 = document.getElementById("phone2");
+
+            var phone3 = document.getElementById("phone3");
+
+            var labelPhone = document.getElementById("lphone");
+
+            userName.onblur = function() {
+
+                var nameValue = userName.value;
+
+                var pattern = /^[a-zA-Z_]\w{5,19}$/g;
+
+                if (nameValue == "" || nameValue == null) {
+
+                    lableName.innerHTML = "用户名不能为空!";
+
+                } else if (pattern.test(nameValue)) {
+
+                    lableName.innerHTML = "正确!";
+
+                } else {
+
+                    lableName.innerHTML = "数字不能开头,长度在6-20位之间！";
+
+                }
+
+            }
+
+            password1.onblur = function() {
+
+                var passValue = password1.value;
+
+                var pattern = /^\w{6,15}$/g;
+
+                if (pattern.test(passValue)) {
+
+                    labelPassword1.innerHTML = "正确!";
+
+                } else if (passValue == "" || passValue == null) {
+
+                    labelPassword1.innerHTML = "密码不能为空!";
+
+                } else {
+
+                    labelPassword1.innerHTML = "密码长度在6-15位之间！";
+
+                }
+
+            }
+
+            password2.onblur = function() {
+
+                var pass1Value = password1.value;
+
+                var pass2Value = password2.value;
+
+                if (pass2Value == "" || pass2Value == null) {
+
+                    labelPassword2.innerHTML = "密码不能为空!";
+
+                } else if (pass1Value == pass2Value) {
+
+                    labelPassword2.innerHTML = "输入正确!";
+
+                } else if (pass1Value != pass2Value) {
+
+                    labelPassword2.innerHTML = "两次密码输入不一致!";
+
+                } else {
+
+                    labelPassword2.innerHTML = "密码长度在6-15位之间！";
+
+                }
+
+            }
+
+            telphone.onblur = function() {
+
+                var telValue = telphone.value;
+
+                var pattern = /^1(83|52|38|)\d{8}$/g;
+
+                if (pattern.test(telValue)) {
+
+                    labelTelphone.innerHTML = "正确!";
+
+                } else if (telValue == "" || telValue == null) {
+
+                    labelTelphone.innerHTML = "手机号码不能为空!";
+
+                } else {
+
+                    labelTelphone.innerHTML = "长度必须11位！";
+
+                }
+
+            }
+
+            phone1.onblur = function() {
+
+                var phone1Value = phone1.value;
+
+                var pattern = /^\d{3,4}$/g;
+
+                if (pattern.test(phone1Value)) {
+
+                    labelPhone.innerHTML = "区号正确!";
+
+                } else if (phone1Value == "" || phone1Value == null) {
+
+                    labelPhone.innerHTML = "区号不能为空!";
+
+                } else {
+
+                    labelPhone.innerHTML = "区号必须3-4位！";
+
+                }
+
+            }
+
+            phone2.onblur = function() {
+
+                var phone2Value = phone2.value;
+
+                var pattern = /^\d{7,8}$/g;
+
+                if (pattern.test(phone2Value)) {
+
+                    labelPhone.innerHTML = "号码正确!";
+
+                } else if (phone2Value == "" || phone2Value == null) {
+
+                    labelPhone.innerHTML = "号码不能为空!";
+
+                } else {
+
+                    labelPhone.innerHTML = "号码必须7-8位！";
+
+                }
+
+            }
+
+            phone3.onblur = function() {
+
+                var phone3Value = phone3.value;
+
+                var pattern = /^(\d{1,4})?$/g;
+
+                if (pattern.test(phone3Value)) {
+
+                    labelPhone.innerHTML = "正确!";
+
+                } else {
+
+                    labelPhone.innerHTML = "错误！";
+
+                }
+
+            }
+
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>注册</h1>
+
+        <div class="div1">
+
+            用户名： <input type="text" placeholder="输入用户名" id="Name" />
+
+            <label id="lname"></label><br/> 密码： <input type="text" placeholder="输入密码" id="Pwd1" />
+
+            <label id="lpass1"></label><br/> 确认密码：
+
+            <input type="text" placeholder="再次输入密码" id="Pwd2" />
+
+            <label id="lpass2"></label><br/> 性别：
+
+            <input type="radio" name="sex" id="sex1" /> 男
+
+            <input type="radio" name="sex" id="sex2" /> 女<br/> 手机号码：
+
+            <input type="text" placeholder="手机号" id="telphone" />
+
+            <label id="ltelphone"></label><br/> 固定电话：
+
+            <input type="text" id="phone1" />-<input type="text" id="phone2" />-<input type="text" id="phone3" />
+
+            <label id="lphone"></label><br/> 兴趣爱好:
+
+            <input type="checkbox" id="hobby1" />全选<input type="checkbox" id="hobby2" />音乐<input type="checkbox" id="hobby3" />美术<input type="checkbox" id="hobby4" />运动<input type="checkbox" id="hobby5" />读书<input type="checkbox" id="hobby6" />编程<br/>
+
+            <input type="button" value="注册" id="btn1" />
+
+            <input type="reset" value="重置" id="btn2" />
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

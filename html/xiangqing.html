@@ -7,7 +7,17 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/xiangqing.css">
     <link rel="stylesheet" href="../fonts/iconfont.css">
+    <script src="../js/jquery-1.11.0.js"></script>
 
+    <style>
+        .mains-bottom li:hover img {
+            cursor: pointer;
+            transition: all 0.6s;
+            transform: scale(2.8);
+            position: relative;
+            z-index: 20;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,7 +26,7 @@
         <div class="header-nav1">
 
             <div class="nav_ul">
-                <a class="f1" href="#">
+                <a class="f1" href="../index.html">
                     <i class="iconfont icon-tubiaozhizuomoban"></i>天猫首页
                 </a>
                 喵，欢迎来天猫</span>
@@ -27,13 +37,13 @@
             <div class="nav_ul2">
                 <ul>
 
-                    <li> <a href="#">我的淘宝<i style="font-size: 10px;" id="picture_b" class="iconfont icon-down-fill1"></i></a>
+                    <li> <a href="#">我的天猫<i style="font-size: 10px;" id="picture_b" class="iconfont icon-down-fill1"></i></a>
                         <ul class="ul2_child">
                             <li><a href="#">已买到的宝贝</a></li>
                             <li><a href="#">已卖出的宝贝</a></li>
                         </ul>
                     </li>
-                    <li> <a href="#">购物车</a></li>
+                    <li> <a href="../html/gouwuches.html">购物车</a></li>
 
 
 
@@ -162,7 +172,7 @@
     </div>
 
     <div class="main">
-        <div class="mains" id="zoomBox">
+        <div class="mains">
             <!-- <div class="mains-left >
                 <img src="../img/TB1Nv.OnxvbeK8jSZPfSuuriXXa (4).jpg" alt="">
             </div>
@@ -197,7 +207,7 @@
                         </div>
                         <span>件</span>
                     </div>
-                    <button>加入超市购物车</button>
+                   <a href="../html/gouwuche.html"> <button>加入超市购物车</button></a>
                     <p>
                         配送范围送货范围仅限焦作、南阳、驻马店、洛阳、开封、三门峡、新乡、郑州、鹤壁、周口、安阳、漯河、商丘、濮阳、济源、许昌、平顶山、信阳地区(生鲜类别仅限部分地区) 支付方式  检测到您当前处于非安全网络环境，部分商品信息可能不准确，请在交易支付页面再次确认商品价格信息。
                     </p>
@@ -206,60 +216,8 @@
 
         </div>
     </div>
-    <script>
-        function $(id) {
-            return document.getElementById(id);
-        }
-
-        function Zoom() {
-            this.zoomBox = $("zoomBox");
-            this.midArea = $("midArea");
-            this.midImg = this.midArea.children[0];
-            this.zoom = $("zoom");
-            this.bigArea = $("bigArea");
-            this.bigImg = this.bigArea.children[0];
-        }
-        Zoom.prototype.start = function() {
-            this.midArea.onmouseover = () => {
-                this.zoom.style.display = "block";
-                this.bigArea.style.display = "block";
-            }
-            this.midArea.onmouseout = () => {
-                this.zoom.style.display = "none";
-                this.bigArea.style.display = "none";
-            }
-            this.midArea.onmousemove = (e) => {
-                let evt = e || event;
-                /* let x = evt.offsetX;
-                let y = evt.offsetY; */
-                let x = evt.pageX - this.zoomBox.offsetLeft;
-                let y = evt.pageY - this.zoomBox.offsetTop;
-
-                let l = x - this.zoom.offsetWidth / 2;
-                let t = y - this.zoom.offsetHeight / 2;
-
-                let mw = this.zoomBox.offsetWidth - this.zoom.offsetWidth;
-                let mh = this.zoomBox.offsetHeight - this.zoom.offsetHeight;
-
-                l = l <= 0 ? 0 : l >= mw ? mw : l;
-                t = t <= 0 ? 0 : t >= mh ? mh : t;
 
 
-                this.zoom.style.left = l + "px";
-                this.zoom.style.top = t + "px";
-
-
-                this.bigImg.style.left = -this.zoom.offsetLeft * this.bigImg.offsetWidth / this.midImg.offsetWidth + "px";
-                this.bigImg.style.top = -this.zoom.offsetTop * this.bigImg.offsetHeight / this.midImg.offsetHeight + "px";
-
-
-            }
-        }
-
-        let zoom = new Zoom();
-        zoom.start();
-    </script>
-    <script src="../js/jquery-1.11.0.js"></script>
     <script src="../js/xiangqing.js"></script>
 </body>
 

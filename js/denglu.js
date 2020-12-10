@@ -19,10 +19,10 @@ $('.submit').click(function() {
         },
         success: function(res) {
             console.log(res);
-            // console.log(data);
-            // console.log(res.msg);
+
+            console.log(res.msg);
             // 根据注册响应结果判断，执行不同的数据提示
-            if (res.code == 0 || res.msg != '' || res.code != '') {
+            if (res.code == 0 || res.msg == '') {
 
                 alert("登录失败")
 
@@ -35,6 +35,7 @@ $('.submit').click(function() {
                 //将id号  用户名  最后登录时间 存储在本地
                 localStorage.setItem("id", res);
 
+                localStorage.setItem("u-id", res.data.id);
                 localStorage.setItem("name", $(".text").val());
 
                 // localStorage.setItem("endTime", new Date().getTime() + 20 * 1000); 

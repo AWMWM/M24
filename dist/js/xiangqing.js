@@ -1,18 +1,19 @@
-  $.ajax({
+$(function() {
+    $.ajax({
 
-      url: 'http://jx.xuzhixiang.top/ap/api/detail.php',
-      data: {
-          id: location.search.split('=')[1],
-
-
-      },
+        url: 'http://jx.xuzhixiang.top/ap/api/detail.php',
+        data: {
+            id: location.search.split('=')[1],
 
 
+        },
 
-      success: function(res) {
-          console.log(res);
-          let html = '';
-          html += `
+
+
+        success: function(res) {
+            console.log(res);
+            let html = '';
+            html += `
         <div class="mains" >
            <div class="mains-left">
                 <img src="${res.data.pimg}" alt="">
@@ -37,13 +38,13 @@
                         <span>数量</span>
                         <input type="text" name="shuliang" id="shuliang" value="1">
                         <div class="anniu">
-                            <input type="button" value="+">
-                            <input type="button" value="-">
+                            <input type="button" class="button1" value="+">
+                            <input type="button"    class="button2" value="-">
 
                         </div>
                         <span>件</span>
                     </div>
-                    <a href="../html/gouwuche.html"> <button>加入超市购物车</button></a>
+                     <button id="ttt">加入超市购物车</button>
                     <p>
                         配送范围送货范围仅限焦作、南阳、驻马店、洛阳、开封、三门峡、新乡、郑州、鹤壁、周口、安阳、漯河、商丘、濮阳、济源、许昌、平顶山、信阳地区(生鲜类别仅限部分地区) 支付方式  检测到您当前处于非安全网络环境，部分商品信息可能不准确，请在交易支付页面再次确认商品价格信息。
                     </p>
@@ -71,37 +72,52 @@
                </div> `
 
 
-          $('.mains').html(html);
-      }
+            $('.mains').html(html);
+            foo()
+        }
 
-  });
+    });
 
-  $("#ttt").click(function() {
-      console.log('1');
-      alert("添加成功");
-      $.ajax({
-          type: "get",
-          url: "http://jx.xuzhixiang.top/ap/api/add-product.php",
-          data: {
-              uid: localStorage.getItem("u-id"),
-              pid: location.search.split('=')[1],
-              pnum: 1,
-          }
-      })
-      location.href = "gouwuche.html";
-  });
+    function foo() {
 
+        $("#ttt").click(function() {
+            //   alert("添加成功");
+            $.ajax({
+                type: "get",
+                url: "http://jx.xuzhixiang.top/ap/api/add-product.php",
+                data: {
+                    uid: localStorage.getItem("u-id"),
+                    pid: location.search.split('=')[1],
+                    pnum: num,
+                },
+                success: function() {
+                    location.href = "../html/gouwuches.html";
+                }
+            })
 
-  //   $("#ttt").click(function() {
-  //       alert("添加成功");
-  //       $.ajax({
-  //           type: "get",
-  //           url: "http://jx.xuzhixiang.top/ap/api/add-product.php",
-  //           data: {
-  //               uid: localStorage.getItem("u-id"),
-  //               pid: location.search.split('=')[1],
-  //               pnum: 1,
-  //           }
-  //       })
-  //       location.href = "gouwuche.html";
-  //   });
+        });
+
+        //   $('.button1').click(function() {
+        //       //   $('#shuliang').val() ++;
+        //       console.log($('#shuliang').val() ++);
+
+        //   })
+        let num = !2;
+        console.log(num);
+        $('.button1').click(function() {
+            num++;
+            $('#shuliang').val(num);
+        })
+        $('.button2').click(function() {
+            if (num <= 1) {
+                num = 1;
+                return;
+            }
+
+            num--;
+            $('#shuliang').val(num);
+        })
+
+    }
+
+})
